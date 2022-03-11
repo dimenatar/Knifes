@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae752f7e0bcd284385d7c1ee41927e4, type: 3}
+  m_Name: StageBundle
+  m_EditorClassIdentifier: 
+  _stages:
+  - _knifeData:
+      _knifeAmount: 0
+    _rotateData:
+      _spinUpTime: 0
+      _rotateSpeed: 0
+      _spinDownTime: 0
+      _spinTime: 0

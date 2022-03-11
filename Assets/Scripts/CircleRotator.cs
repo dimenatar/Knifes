@@ -61,7 +61,7 @@ public class CircleRotator : MonoBehaviour
     private void SlowDown()
     {
         _passedTime += Time.deltaTime;
-        _currentRotation = _rotates[_rotateStageIndex].RotateSpeed - _rotates[_rotateStageIndex].RotateSpeed / _rotates[_rotateStageIndex].SpinUpTime * _passedTime;
+        _currentRotation = _rotates[_rotateStageIndex].RotateSpeed - _rotates[_rotateStageIndex].RotateSpeed / _rotates[_rotateStageIndex].SpinDownTime * _passedTime;
         if (_currentRotation <= 0)
         {
             transform.rotation = Quaternion.Euler(Vector3.zero);
