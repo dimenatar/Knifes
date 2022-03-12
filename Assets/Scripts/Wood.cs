@@ -73,6 +73,7 @@ public class Wood : MonoBehaviour
 
     private void DestroyWood()
     {
+        DestroyApple();
         DestroyKnifes();
         transform.rotation = Quaternion.identity;
         _woodSprite.enabled = false;
@@ -111,6 +112,17 @@ public class Wood : MonoBehaviour
         //    Destroy(item.GetComponent<BoxCollider>());
         //    item.AddComponent<Fader>();
         //}
+    }
+
+    private void DestroyApple()
+    {
+        var apple = transform.Find("Apple");
+        if (apple)
+        {
+            apple.transform.parent = null;
+            Destroy(apple.gameObject.GetComponent<Apple>());
+            apple.gameObject.AddComponent<Fader>();
+        }
     }
 
     private void CompleteStage()
