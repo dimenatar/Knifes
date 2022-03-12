@@ -13,10 +13,55 @@ MonoBehaviour:
   m_Name: StageBundle
   m_EditorClassIdentifier: 
   _stages:
-  - _knifeData:
-      _knifeAmount: 0
+  - _stageNumber: 1
+    _knifeData:
+      _knifeAmount: 5
     _rotateData:
-      _spinUpTime: 0
-      _rotateSpeed: 0
-      _spinDownTime: 0
-      _spinTime: 0
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+  - _stageNumber: 2
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+  - _stageNumber: 3
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
