@@ -7,8 +7,8 @@ using UnityEngine;
 public class KnifeSkinData
 {
     [SerializeField] private int _skinIndex;
-    [SerializeField] private Sprite _skinImage;
+    [SerializeField] private string _skinResourcesPath;
 
     public int SkinIndex => _skinIndex;
-    public Sprite SkinImage => _skinImage;
+    public string SkinResourcesPath => _skinResourcesPath;
 }

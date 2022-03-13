@@ -28,8 +28,7 @@ public class KnifeThrower : MonoBehaviour
     private void SetUserSprite()
     {
         UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);
-        Debug.Log(userData == null);
-        _userSprite = userData.CurrentKnife.SkinImage;
+        _userSprite = Resources.Load<Sprite>(userData.CurrentKnife.SkinResourcesPath);
     }
 
     private void Start()

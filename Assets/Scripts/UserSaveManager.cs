@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
@@ -7,6 +5,7 @@ using UnityEngine;
 public static class UserSaveManager
 {
     public static string Path { get; private set; } = Application.persistentDataPath + "/UserData.bin";
+    public static string SpritePath { get; private set; } = Application.persistentDataPath + "/UserSprites.bin";
 
     public static UserData LoadUserData(string path)
     {
@@ -27,9 +26,9 @@ public static class UserSaveManager
 
     public static void SaveUserData(string path, UserData data)
     {
+        Debug.Log(path);
         FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
         new BinaryFormatter().Serialize(stream, data);
         stream.Close();
-        Debug.Log("data saved");
     }
 }
