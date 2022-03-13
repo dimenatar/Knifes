@@ -23,11 +23,11 @@ public class StageController : MonoBehaviour
         if (_currentStage < _stageBundle.StageData.Count)
         {
             _currentStage++;
-            OnStageChanged?.Invoke(_currentStage);
         }
         else
         {
             _currentStage = 1;
         }
+        OnStageChanged?.Invoke(_currentStage);
     }
 }

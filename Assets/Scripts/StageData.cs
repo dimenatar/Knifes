@@ -11,6 +11,8 @@ public class StageData
     [SerializeField] private List<RotateStageData> _rotateData;
     [SerializeField] private Sprite _woodSprite;
     [SerializeField] private List<Sprite> _woodParts;
+    [SerializeField] private bool _isBossStage;
+    [SerializeField] private int _bossKnifeSkinIndex;
 
     public KnifeStageData KnifeData => _knifeData;
     public List<RotateStageData> RotateData => _rotateData;

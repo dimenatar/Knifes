@@ -1101,7 +1101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &793430100
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2379,6 +2379,7 @@ GameObject:
   - component: {fileID: 2088347523}
   - component: {fileID: 2088347524}
   - component: {fileID: 2088347525}
+  - component: {fileID: 2088347526}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2402,7 +2403,7 @@ MonoBehaviour:
   _stageController: {fileID: 2088347521}
   _knifePrefab: {fileID: 705932545}
   _spawnPoint: {fileID: 604179921}
-  _lose: {fileID: 0}
+  _lose: {fileID: 2088347526}
   _availableKnifesText: {fileID: 1022942549}
 --- !u!114 &2088347519
 MonoBehaviour:
@@ -2503,3 +2504,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa334870d448cc44b883f63148545c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2088347526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088347517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5feeb142083e444ab9154767c600a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _delayToShowLosePanel: 1
+  _lostPane: {fileID: 793430099}

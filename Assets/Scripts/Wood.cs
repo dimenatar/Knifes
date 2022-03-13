@@ -136,7 +136,7 @@ public class Wood : MonoBehaviour
     {
         Destroy(knife.GetComponent<KnifeMover>());
         Destroy(knife.GetComponent<Rigidbody>());
-        Destroy(knife.GetComponent<Knife>());
+        //Destroy(knife.GetComponent<Knife>());
         Debug.Log(Vector3.Distance(transform.position, knife.transform.position));
         knife.transform.SetParent(this.transform);
         _receivedKnifes.Add(knife);

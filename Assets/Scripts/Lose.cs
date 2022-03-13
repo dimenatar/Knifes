@@ -9,6 +9,7 @@ public class Lose : MonoBehaviour
 
     public void ShowLosePanel()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.2f;
+        _lostPane.SetActive(true);
     }
 }

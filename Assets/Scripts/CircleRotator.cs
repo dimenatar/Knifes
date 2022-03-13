@@ -34,6 +34,11 @@ public class CircleRotator : MonoBehaviour
         if (data != null)
         {
             _rotateData = _stageController.GetCurrentStage().RotateData;
+            _isGetRotateSpeed = false;
+            _isNeedToSlowDownRotation = false;
+            _passedTime = 0;
+            _currentRotation = 0;
+            _rotateStageIndex = 0;
         }
     }
 
@@ -104,10 +109,14 @@ public class CircleRotator : MonoBehaviour
         if (_rotateStageIndex == _rotateData.Count - 1)
         {
             _rotateStageIndex = 0;
-            _isGetRotateSpeed = false;
-            _isNeedToSlowDownRotation = false;
-            _passedTime = 0;
-            _currentRotation = 0;
         }
+        else
+        {
+            _rotateStageIndex++;
+        }
+        _isGetRotateSpeed = false;
+        _isNeedToSlowDownRotation = false;
+        _passedTime = 0;
+        _currentRotation = 0;
     }
 }

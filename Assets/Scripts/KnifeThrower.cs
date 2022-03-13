@@ -14,6 +14,7 @@ public class KnifeThrower : MonoBehaviour
     [SerializeField] private Lose _lose;
     [SerializeField] private Text _availableKnifesText;
 
+    private Sprite _userSprite;
     private int _thrownKnifes;
     private int _availableKnifes;
 
@@ -24,19 +25,27 @@ public class KnifeThrower : MonoBehaviour
         _stageController.OnStageChanged += SetAvailableKnifes;
     }
 
+    private void SetUserSprite()
+    {
+        UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);
+        Debug.Log(userData == null);
+        _userSprite = userData.CurrentKnife.SkinImage;
+    }
+
     private void Start()
     {
         SetAvailableKnifes(1);
     }
     public void ThrowKnife()
     {
-        if (_knife)
+        if (_knife && Time.timeScale >= 1)
         {
             _knife.AddComponent<Rigidbody>();
             _knife.GetComponent<Rigidbody>().freezeRotation = true;
             _knife.AddComponent<KnifeMover>();
             _knife.GetComponent<KnifeMover>().SetSpeed(_speed);
             _knife.GetComponent<BoxCollider>().enabled = true;
+            _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += _lose.ShowLosePanel;
             _knife = null;
             SpawnKnife();
         }
@@ -44,6 +53,7 @@ public class KnifeThrower : MonoBehaviour
 
     private void SetAvailableKnifes(int stageNumber)
     {
+        SetUserSprite();
         _thrownKnifes = 0;
         StageData data = _stageController.GetCurrentStage();
         if (data != null)
@@ -60,6 +70,7 @@ public class KnifeThrower : MonoBehaviour
         if (_thrownKnifes < _availableKnifes)
         {
             _knife = Instantiate(_knifePrefab, _spawnPoint.position, Quaternion.Euler(Vector3.zero));
+            _knife.GetComponent<SpriteRenderer>().sprite = _userSprite;
             _knife.name = "Knife";
             _thrownKnifes++;
             _availableKnifesText.text = (_availableKnifes - _thrownKnifes).ToString();

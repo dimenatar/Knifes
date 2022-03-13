@@ -19,6 +19,8 @@ public class KnifeMover : MonoBehaviour
         if (collision.gameObject != gameObject && collision.gameObject.GetComponent<Knife>())
         {
             OnKnifeHitOtherKnife?.Invoke();
+            gameObject.AddComponent<Fader>();
+            Destroy(this);
         }
     }
 
