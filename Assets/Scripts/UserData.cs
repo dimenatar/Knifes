@@ -9,11 +9,13 @@ public class UserData
 {
     private int _highestPoints;
     private int _money;
+    private int _highestStage;
     private List<KnifeSkinData> _unlockedSkins = new List<KnifeSkinData>();
     private KnifeSkinData _currentKnife;
 
+    public int HighestStage => _highestStage;
     public int Money { get => _money; set => _money = value;}
-    public int HiestPoints => _highestPoints;
+    public int HighestPoints => _highestPoints;
     public KnifeSkinData CurrentKnife => _currentKnife;
 
     public List<KnifeSkinData> UnlockedSkins => _unlockedSkins;
@@ -23,6 +25,14 @@ public class UserData
         if (record > _highestPoints)
         {
             _highestPoints = record;
+        }
+    }
+
+    public void UpdateHighestStage(int stage)
+    {
+        if (stage > _highestStage)
+        {
+            _highestStage = stage;
         }
     }
 

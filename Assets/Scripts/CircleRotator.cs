@@ -20,7 +20,7 @@ public class CircleRotator : MonoBehaviour
 
     private void Start()
     {
-        SetStageData(1);
+        //SetStageData(1);
     }
 
     private void Update()
@@ -28,12 +28,12 @@ public class CircleRotator : MonoBehaviour
         Rotate();
     }
 
-    private void SetStageData(int stage)
+    private void SetStageData(StageData stage)
     {
-        StageData data = _stageController.GetCurrentStage();
+        StageData data = stage;
         if (data != null)
         {
-            _rotateData = _stageController.GetCurrentStage().RotateData;
+            _rotateData = stage.RotateData;
             _isGetRotateSpeed = false;
             _isNeedToSlowDownRotation = false;
             _passedTime = 0;

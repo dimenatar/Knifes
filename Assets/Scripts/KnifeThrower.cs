@@ -13,6 +13,7 @@ public class KnifeThrower : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private Lose _lose;
     [SerializeField] private Text _availableKnifesText;
+    [SerializeField] private UserStatistics _userStatistics;
 
     private Sprite _userSprite;
     private int _thrownKnifes;
@@ -31,10 +32,6 @@ public class KnifeThrower : MonoBehaviour
         _userSprite = Resources.Load<Sprite>(userData.CurrentKnife.SkinResourcesPath);
     }
 
-    private void Start()
-    {
-        SetAvailableKnifes(1);
-    }
     public void ThrowKnife()
     {
         if (_knife && Time.timeScale >= 1)
@@ -45,16 +42,24 @@ public class KnifeThrower : MonoBehaviour
             _knife.GetComponent<KnifeMover>().SetSpeed(_speed);
             _knife.GetComponent<BoxCollider>().enabled = true;
             _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += _lose.ShowLosePanel;
+            _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += _userStatistics.CollectStatistics;
+            _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += ClassicVibrate;
             _knife = null;
             SpawnKnife();
         }
     }
 
-    private void SetAvailableKnifes(int stageNumber)
+    private void ClassicVibrate()
+    {
+        Vibration.Init();
+        Vibration.Vibrate();
+    }
+
+    private void SetAvailableKnifes(StageData stage)
     {
         SetUserSprite();
         _thrownKnifes = 0;
-        StageData data = _stageController.GetCurrentStage();
+        StageData data = stage;
         if (data != null)
         {
             _availableKnifes = data.KnifeData.KnifeAmount;

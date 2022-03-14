@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skins:
   - _skinIndex: 1
-    _skinImage: {fileID: 21300000, guid: caa8b4b8c6e28ce488af8e7c9ecbcaaa, type: 3}
+    _skinResourcesPath: Default
   - _skinIndex: 2
-    _skinImage: {fileID: 21300000, guid: 7ea8f4dbe13ce384a9ed135bbbb00c7e, type: 3}
+    _skinResourcesPath: GoldKnife
   - _skinIndex: 3
-    _skinImage: {fileID: 21300000, guid: acdfd7d349fe1ed40b4690caae9698d5, type: 3}
+    _skinResourcesPath: EmerandKnife
   - _skinIndex: 4
-    _skinImage: {fileID: 21300000, guid: 359937cc7cdb4564b9b7f3fea828604a, type: 3}
+    _skinResourcesPath: BloodKnife

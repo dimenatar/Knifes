@@ -8,6 +8,8 @@ public class UserMoney : MonoBehaviour
     [SerializeField] private Text _moneyText;
     private int _moneyAmount;
 
+    public int MoneyAmount => _moneyAmount;
+
     private void Start()
     {
         UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);

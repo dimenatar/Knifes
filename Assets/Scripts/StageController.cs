@@ -9,9 +9,14 @@ public class StageController : MonoBehaviour
 
     private int _currentStage = 1;
 
-    public delegate void StageChanged(int stage);
+    public delegate void StageChanged(StageData stage);
     public event StageChanged OnStageChanged;
     public event Action OnGameCompleted;
+
+    private void Start()
+    {
+        OnStageChanged?.Invoke(_stageBundle.StageData[_currentStage - 1]);
+    }
 
     public StageData GetCurrentStage()
     {
@@ -28,6 +33,6 @@ public class StageController : MonoBehaviour
         {
             _currentStage = 1;
         }
-        OnStageChanged?.Invoke(_currentStage);
+        OnStageChanged?.Invoke(_stageBundle.StageData[_currentStage-1]);
     }
 }

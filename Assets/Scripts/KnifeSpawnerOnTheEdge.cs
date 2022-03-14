@@ -17,10 +17,10 @@ public class KnifeSpawnerOnTheEdge : MonoBehaviour
 
     private void Start()
     {
-        SpawnRandomAmountKnifes(1);
+        //SpawnRandomAmountKnifes(1);
     }
 
-    public void SpawnRandomAmountKnifes(int stage)
+    public void SpawnRandomAmountKnifes(StageData stage)
     {
         Vector2 randomPointOnEdge;
         int amountKnifes = Random.Range(_minPossibleAmountKnifes, _maxPossibleAmountKnifes);

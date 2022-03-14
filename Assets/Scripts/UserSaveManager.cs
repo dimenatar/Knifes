@@ -5,7 +5,6 @@ using UnityEngine;
 public static class UserSaveManager
 {
     public static string Path { get; private set; } = Application.persistentDataPath + "/UserData.bin";
-    public static string SpritePath { get; private set; } = Application.persistentDataPath + "/UserSprites.bin";
 
     public static UserData LoadUserData(string path)
     {

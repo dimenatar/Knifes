@@ -2018,6 +2018,7 @@ MonoBehaviour:
   - {fileID: 1963157404}
   - {fileID: 758870332}
   - {fileID: 1242186885}
+  _userStatistics: {fileID: 2088347527}
 --- !u!135 &1530285628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2380,6 +2381,7 @@ GameObject:
   - component: {fileID: 2088347524}
   - component: {fileID: 2088347525}
   - component: {fileID: 2088347526}
+  - component: {fileID: 2088347527}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2405,6 +2407,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 604179921}
   _lose: {fileID: 2088347526}
   _availableKnifesText: {fileID: 1022942549}
+  _userStatistics: {fileID: 2088347527}
 --- !u!114 &2088347519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2518,3 +2521,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delayToShowLosePanel: 1
   _lostPane: {fileID: 793430099}
+  _userStatistics: {fileID: 2088347527}
+  _money: {fileID: 2088347524}
+  _moneyText: {fileID: 748789423}
+  _scoreText: {fileID: 1217402677}
+--- !u!114 &2088347527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088347517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3950f30eb3ee2324284d510d15303542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userMoney: {fileID: 2088347524}
+  _stageController: {fileID: 2088347521}

@@ -17,10 +17,10 @@ public class AppleSpawner : MonoBehaviour
 
     private void Start()
     {
-        TryToSpawnApple(1);
+        //TryToSpawnApple(1);
     }
 
-    public void TryToSpawnApple(int stage)
+    public void TryToSpawnApple(StageData stage)
     {
         Vector2 randomPointOnEdge;
         int change = Random.Range(0, 100);

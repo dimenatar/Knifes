@@ -8,11 +8,13 @@ public class Wood : MonoBehaviour
     [SerializeField] private List<SpriteRenderer> _woodPartsSprites;
     [SerializeField] private SpriteRenderer _woodSprite;
     [SerializeField] private List<Transform> _woodPartsPositions;
+    [SerializeField] private UserStatistics _userStatistics;
 
     private List<Vector3> _woodPartsBasePositions = new List<Vector3>();
     private List<GameObject> _receivedKnifes = new List<GameObject>();
     private int _requiredKnifeAmount;
     private int _receivedKnifeAmount;
+    private int _levelCounter = 1;
 
     private void Awake()
     {
@@ -23,8 +25,6 @@ public class Wood : MonoBehaviour
     private void Start()
     {
         SetPartsBasePositions();
-        SetRequiredKnifes(1);
-        SetWoodSprites(1);
     }
 
     private void SetPartsBasePositions()
@@ -45,11 +45,11 @@ public class Wood : MonoBehaviour
         }
     }
 
-    private void SetWoodSprites(int stage)
+    private void SetWoodSprites(StageData stage)
     {
         _receivedKnifes.Clear();
         ReturnPartsToBasePositions();
-        StageData data = _stageController.GetCurrentStage();
+        StageData data = stage;
         if (data != null)
         {
             _woodSprite.sprite = data.WoodSprite;
@@ -62,9 +62,15 @@ public class Wood : MonoBehaviour
         }
     }
 
-    private void SetRequiredKnifes(int stage)
+    private void LightVibrate()
     {
-        StageData data = _stageController.GetCurrentStage();
+        Vibration.Init();
+        Vibration.VibratePop();
+    }
+
+    private void SetRequiredKnifes(StageData stage)
+    {
+        StageData data = stage;
         if (data != null)
         {
             _requiredKnifeAmount = data.KnifeData.KnifeAmount;
@@ -101,17 +107,10 @@ public class Wood : MonoBehaviour
         }
         foreach (var item in knifes)
         {
+            Destroy(item.GetComponent<Knife>());
             item.transform.parent = null;
             item.AddComponent<Fader>();
         }
-        Debug.Log("destroed knifes");
-        //foreach (var item in _receivedKnifes)
-        //{
-        //    item.transform.parent = null;
-
-        //    Destroy(item.GetComponent<BoxCollider>());
-        //    item.AddComponent<Fader>();
-        //}
     }
 
     private void DestroyApple()
@@ -127,19 +126,21 @@ public class Wood : MonoBehaviour
 
     private void CompleteStage()
     {
-        
+        LightVibrate();
         DestroyWood();
         _stageController.IncrementStage();
+        _levelCounter++;
     }
 
     private void ReceiveKnife(GameObject knife)
     {
+        LightVibrate();
         Destroy(knife.GetComponent<KnifeMover>());
         Destroy(knife.GetComponent<Rigidbody>());
-        //Destroy(knife.GetComponent<Knife>());
         Debug.Log(Vector3.Distance(transform.position, knife.transform.position));
         knife.transform.SetParent(this.transform);
         _receivedKnifes.Add(knife);
+        _userStatistics.IncrementScore();
         _receivedKnifeAmount++;
         if (_receivedKnifeAmount == _requiredKnifeAmount && _requiredKnifeAmount != 0)
         {
