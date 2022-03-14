@@ -6,12 +6,17 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     [SerializeField] private StageBundle _stageBundle;
-
+    [SerializeField] private EndGamePanel _endGamePanel;
     private int _currentStage = 1;
 
     public delegate void StageChanged(StageData stage);
     public event StageChanged OnStageChanged;
     public event Action OnGameCompleted;
+
+    private void Awake()
+    {
+        OnGameCompleted += _endGamePanel.ShowWinPanel;
+    }
 
     private void Start()
     {
@@ -28,11 +33,11 @@ public class StageController : MonoBehaviour
         if (_currentStage < _stageBundle.StageData.Count)
         {
             _currentStage++;
+            OnStageChanged?.Invoke(_stageBundle.StageData[_currentStage - 1]);
         }
         else
         {
-            _currentStage = 1;
+            OnGameCompleted?.Invoke();
         }
-        OnStageChanged?.Invoke(_stageBundle.StageData[_currentStage-1]);
     }
 }

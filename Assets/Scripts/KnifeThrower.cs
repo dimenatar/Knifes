@@ -11,7 +11,7 @@ public class KnifeThrower : MonoBehaviour
     [SerializeField] private StageController _stageController;
     [SerializeField] private GameObject _knifePrefab;
     [SerializeField] private Transform _spawnPoint;
-    [SerializeField] private Lose _lose;
+    [SerializeField] private EndGamePanel _lose;
     [SerializeField] private Text _availableKnifesText;
     [SerializeField] private UserStatistics _userStatistics;
 

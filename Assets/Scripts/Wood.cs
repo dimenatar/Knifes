@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Wood : MonoBehaviour
@@ -9,12 +10,12 @@ public class Wood : MonoBehaviour
     [SerializeField] private SpriteRenderer _woodSprite;
     [SerializeField] private List<Transform> _woodPartsPositions;
     [SerializeField] private UserStatistics _userStatistics;
+    [SerializeField] private KnifeSkinBundle _knifeSkinBundle;
 
     private List<Vector3> _woodPartsBasePositions = new List<Vector3>();
     private List<GameObject> _receivedKnifes = new List<GameObject>();
     private int _requiredKnifeAmount;
     private int _receivedKnifeAmount;
-    private int _levelCounter = 1;
 
     private void Awake()
     {
@@ -68,6 +69,21 @@ public class Wood : MonoBehaviour
         Vibration.VibratePop();
     }
 
+    private void ManageStage(StageData stageData)
+    {
+        if (stageData.BossStage != null)
+        {
+            SaveUserSkin(stageData.BossStage.KnifeIndex);
+        }
+    }
+
+    private void SaveUserSkin(int knifeIndex)
+    {
+        UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);
+        userData.UnlockSkin(_knifeSkinBundle.Skins.Where(skin => skin.SkinIndex == knifeIndex).FirstOrDefault());
+        UserSaveManager.SaveUserData(UserSaveManager.Path, userData);
+    }
+
     private void SetRequiredKnifes(StageData stage)
     {
         StageData data = stage;
@@ -85,7 +101,6 @@ public class Wood : MonoBehaviour
         _woodSprite.enabled = false;
         for (int i = 0; i < _woodPartsSprites.Count; i++)
         {
-            Debug.Log("cmplete");
             GameObject part = Instantiate(_woodPartsSprites[i].gameObject);
             part.transform.parent = null;
             part.AddComponent<Fader>();
@@ -96,7 +111,6 @@ public class Wood : MonoBehaviour
 
     private void DestroyKnifes()
     {
-        Debug.Log("start destroing");
         List<GameObject> knifes = new List<GameObject>();
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -127,9 +141,9 @@ public class Wood : MonoBehaviour
     private void CompleteStage()
     {
         LightVibrate();
+        ManageStage(_stageController.GetCurrentStage());
         DestroyWood();
         _stageController.IncrementStage();
-        _levelCounter++;
     }
 
     private void ReceiveKnife(GameObject knife)
