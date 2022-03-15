@@ -16,7 +16,11 @@ public class KnifeThrower : MonoBehaviour
     [SerializeField] private Text _availableKnifesText;
     [SerializeField] private UserStatistics _userStatistics;
     [SerializeField] private Text _wholeKnifeAmount;
+    [SerializeField] private float _timeToReload;
+    [SerializeField] private Timer _timer;
 
+    private bool _canThrowAfterReload;
+    private bool _canThrow = true;
     private Sprite _userSprite;
     private int _thrownKnifes;
     private int _availableKnifes;
@@ -26,6 +30,17 @@ public class KnifeThrower : MonoBehaviour
     private void Awake()
     {
         _stageController.OnStageChanged += SetAvailableKnifes;
+        _timer.OnTime += AllowThrow;
+    }
+
+    private void Start()
+    {
+        _timer.Initialise(_timeToReload);
+    }
+
+    private void DisableThrowing()
+    {
+        _canThrow = false;
     }
 
     private void SetUserSprite()
@@ -34,15 +49,22 @@ public class KnifeThrower : MonoBehaviour
         _userSprite = Resources.Load<Sprite>(userData.CurrentKnife.SkinResourcesPath);
     }
 
+    private void AllowThrow()
+    {
+        _canThrowAfterReload = true;
+    }
+
     public void ThrowKnife()
     {
-        if (_knife && Time.timeScale >= 1)
+        if (_knife && _canThrow && _canThrowAfterReload)
         {
+            _canThrowAfterReload = false;
             _knife.AddComponent<Rigidbody>();
             _knife.GetComponent<Rigidbody>().freezeRotation = true;
             _knife.AddComponent<KnifeMover>();
             _knife.GetComponent<KnifeMover>().SetSpeed(_speed);
             _knife.GetComponent<BoxCollider>().enabled = true;
+            _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += DisableThrowing;
             _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += _lose.ShowLosePanel;
             _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += _userStatistics.CollectStatistics;
             _knife.GetComponent<KnifeMover>().OnKnifeHitOtherKnife += ClassicVibrate;

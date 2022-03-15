@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using DG.Tweening;
+
 public class BossManager : MonoBehaviour
 {
     [SerializeField] private KnifeSkinBundle _knifeSkinBundle;
@@ -25,6 +27,7 @@ public class BossManager : MonoBehaviour
         {
             _bossName.enabled = true;
             _bossName.text = "Boss stage: " + stageData.BossStage.BossName + "!";
+            _bossName.transform.DOPunchScale(_bossName.transform.localScale * 1.5f, 0.5f, 2);
             Invoke(nameof(HideBossName), 1f);
         }
     }

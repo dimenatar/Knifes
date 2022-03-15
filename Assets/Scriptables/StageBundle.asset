@@ -18,7 +18,7 @@ MonoBehaviour:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 3
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -34,8 +34,12 @@ MonoBehaviour:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 3
       _spinDownTime: 2
+      _spinTime: 2
+    - _spinUpTime: 1
+      _rotateSpeed: 3
+      _spinDownTime: 1
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
     _woodParts:
@@ -50,7 +54,7 @@ MonoBehaviour:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 3
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -66,9 +70,17 @@ MonoBehaviour:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 3
       _spinDownTime: 2
       _spinTime: 2
+    - _spinUpTime: 1
+      _rotateSpeed: 5
+      _spinDownTime: 1
+      _spinTime: 3
+    - _spinUpTime: 1
+      _rotateSpeed: 7
+      _spinDownTime: 3
+      _spinTime: 1
     _woodSprite: {fileID: 21300000, guid: 3156e5d097369ee449622eafe13a9c51, type: 3}
     _woodParts:
     - {fileID: 21300000, guid: a6f4f97d42e691843887f7e2184a80a9, type: 3}
@@ -77,12 +89,12 @@ MonoBehaviour:
     _bossStage:
       _bossName: blood
       _knifeIndex: 4
-  - _stageNumber: 4
+  - _stageNumber: 5
     _knifeData:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 4
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -93,12 +105,12 @@ MonoBehaviour:
     _bossStage:
       _bossName: 
       _knifeIndex: 0
-  - _stageNumber: 4
+  - _stageNumber: 6
     _knifeData:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 3
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -109,13 +121,13 @@ MonoBehaviour:
     _bossStage:
       _bossName: 
       _knifeIndex: 0
-  - _stageNumber: 4
+  - _stageNumber: 7
     _knifeData:
       _knifeAmount: 5
     _rotateData:
-    - _spinUpTime: 2
-      _rotateSpeed: 1
-      _spinDownTime: 2
+    - _spinUpTime: 1
+      _rotateSpeed: 4
+      _spinDownTime: 1
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: 53c8573d646c55a4d899808ed0a1a6cf, type: 3}
     _woodParts:
@@ -125,12 +137,12 @@ MonoBehaviour:
     _bossStage:
       _bossName: gold
       _knifeIndex: 2
-  - _stageNumber: 4
+  - _stageNumber: 8
     _knifeData:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 4
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -141,12 +153,12 @@ MonoBehaviour:
     _bossStage:
       _bossName: 
       _knifeIndex: 0
-  - _stageNumber: 4
+  - _stageNumber: 9
     _knifeData:
       _knifeAmount: 5
     _rotateData:
     - _spinUpTime: 2
-      _rotateSpeed: 1
+      _rotateSpeed: 4
       _spinDownTime: 2
       _spinTime: 2
     _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
@@ -165,6 +177,18 @@ MonoBehaviour:
       _rotateSpeed: 1
       _spinDownTime: 2
       _spinTime: 2
+    - _spinUpTime: 1
+      _rotateSpeed: 3
+      _spinDownTime: 1
+      _spinTime: 1
+    - _spinUpTime: 1
+      _rotateSpeed: 6
+      _spinDownTime: 2
+      _spinTime: 2
+    - _spinUpTime: 0.5
+      _rotateSpeed: 6
+      _spinDownTime: 0.5
+      _spinTime: 4
     _woodSprite: {fileID: 21300000, guid: 73283afb60305bc45a4c4472c78fc23e, type: 3}
     _woodParts:
     - {fileID: 21300000, guid: 673c787e506a7d44987eff327dc3227e, type: 3}
