@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -8,7 +5,6 @@ public class Timer : MonoBehaviour
     public delegate void onTime();
     public event onTime OnTime;
 
-    //public event Action OnTime;
     private float _delay;
     private float _time;
     private bool _isInitialised;

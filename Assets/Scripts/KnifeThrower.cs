@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
-using System;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class KnifeThrower : MonoBehaviour
 {

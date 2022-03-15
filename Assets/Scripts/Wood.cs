@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Wood : MonoBehaviour
@@ -104,7 +102,7 @@ public class Wood : MonoBehaviour
         List<GameObject> knifes = new List<GameObject>();
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).name == "Knife")
+            if (transform.GetChild(i).gameObject.GetComponent<Knife>())
             {
                 knifes.Add(transform.GetChild(i).gameObject);
             }

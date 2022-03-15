@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
+using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using DG.Tweening;
 
 public class BossManager : MonoBehaviour
 {
@@ -18,8 +16,6 @@ public class BossManager : MonoBehaviour
         _stageController.OnStageChanged += CheckIfBossStage;
         _wood.OnStageCompleted += SaveBossSkin;
     }
-
-
 
     private void CheckIfBossStage(StageData stageData)
     {

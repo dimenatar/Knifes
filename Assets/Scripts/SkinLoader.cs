@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
 
 public class SkinLoader : MonoBehaviour
 {
@@ -31,10 +29,6 @@ public class SkinLoader : MonoBehaviour
             userData.SetUsersKnife(_skinBundle.Skins[0].SkinIndex);
             UserSaveManager.SaveUserData(UserSaveManager.Path, userData);
         }
-        foreach (var item in userData.UnlockedSkins)
-        {
-            Debug.LogWarning(item.SkinResourcesPath);
-        }
         _usersKnife.sprite = Resources.Load<Sprite>(userData.CurrentKnife.SkinResourcesPath);
         for (int i = 0; i < _skinBundle.Skins.Count; i++)
         {
@@ -43,11 +37,8 @@ public class SkinLoader : MonoBehaviour
             background.AddComponent<KnifeMenuItem>();
             if (skin.Count == 0)
             {
-                //if (!userData.UnlockedSkins.Contains(_skinBundle.Skins[i]))
-                //{
                 background.GetComponent<Image>().color = Color.gray;
                 background.GetComponent<KnifeMenuItem>().SetSkinData(_skinBundle.Skins[i], false);
-                //}
             }
             else
             {

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,12 +16,6 @@ public class CircleRotator : MonoBehaviour
     {
         _stageController.OnStageChanged += SetStageData;
     }
-
-    private void Start()
-    {
-        //SetStageData(1);
-    }
-
     private void Update()
     {
         Rotate();
@@ -70,6 +63,7 @@ public class CircleRotator : MonoBehaviour
         }
         else
         {
+            Debug.Log(_currentRotation);
             transform.Rotate(0, 0, _currentRotation);
         }
     }
@@ -94,7 +88,6 @@ public class CircleRotator : MonoBehaviour
         _currentRotation = _rotateData[_rotateStageIndex].RotateSpeed - _rotateData[_rotateStageIndex].RotateSpeed / _rotateData[_rotateStageIndex].SpinDownTime * _passedTime;
         if (_currentRotation <= 0)
         {
-            transform.rotation = Quaternion.Euler(Vector3.zero);
             StartNewRotateStage();
             return;
         }
@@ -114,9 +107,9 @@ public class CircleRotator : MonoBehaviour
         {
             _rotateStageIndex++;
         }
-        _isGetRotateSpeed = false;
-        _isNeedToSlowDownRotation = false;
         _passedTime = 0;
         _currentRotation = 0;
+        _isGetRotateSpeed = false;
+        _isNeedToSlowDownRotation = false;
     }
 }

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class BossStage : object
+public class BossStage
 {
     [SerializeField] private string _bossName;
     [SerializeField] private int _knifeIndex;
