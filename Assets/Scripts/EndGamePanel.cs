@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class EndGamePanel : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class EndGamePanel : MonoBehaviour
 
     private void SetTextValues()
     {
+        _moneyText.transform.DOPunchScale(_moneyText.transform.localScale*1.5f, 0.5f, 2);
         _moneyText.text = _money.MoneyAmount.ToString();
+        _scoreText.transform.DOPunchScale(_scoreText.transform.localScale * 1.5f, 0.5f, 2);
         _scoreText.text = _userStatistics.Stage.ToString();
     }
 
@@ -33,9 +36,14 @@ public class EndGamePanel : MonoBehaviour
 
     private void ShowPanel()
     {
-        SetTextValues();
-        Time.timeScale = 0.2f;
-        _lostPane.SetActive(true);
+        if (!_lostPane.activeSelf)
+        {
+            SetTextValues();
+            _lostPane.transform.localScale = Vector3.zero;
+            _lostPane.SetActive(true);
+            _lostPane.transform.DOScale(Vector3.one, 0.1f);
+            Time.timeScale = 0.2f;
+        }
     }
 
     private void ShowResult(bool isLose)

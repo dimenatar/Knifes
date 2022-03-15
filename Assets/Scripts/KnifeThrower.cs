@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using System;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class KnifeThrower : MonoBehaviour
 {
@@ -64,8 +65,10 @@ public class KnifeThrower : MonoBehaviour
         if (data != null)
         {
             _availableKnifes = data.KnifeData.KnifeAmount;
+            _availableKnifesText.transform.DOPunchScale(_availableKnifesText.transform.localScale * 1.5f, 0.5f, 2);
             _availableKnifesText.text = (_availableKnifes).ToString();
-            _wholeKnifeAmount.text = _availableKnifesText.text;
+            _wholeKnifeAmount.transform.DOPunchScale(_wholeKnifeAmount.transform.localScale * 1.5f, 0.5f, 2);
+            _wholeKnifeAmount.text = (_availableKnifes-1).ToString();
             SpawnKnife();
         }
     }    
@@ -79,6 +82,7 @@ public class KnifeThrower : MonoBehaviour
             _knife.GetComponent<SpriteRenderer>().sprite = _userSprite;
             _knife.name = "Knife";
             _thrownKnifes++;
+            _availableKnifesText.transform.DOPunchScale(_availableKnifesText.transform.localScale * 1.5f, 0.1f, 2);
             _availableKnifesText.text = (_availableKnifes - _thrownKnifes).ToString();
         }
     }

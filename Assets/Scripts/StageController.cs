@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class StageController : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class StageController : MonoBehaviour
 
     private void SetStageText(StageData stageData)
     {
+        _stageText.transform.DOPunchScale(_stageText.transform.localScale * 1.5f, 0.5f, 2);
         _stageText.text = stageData.StageNumber.ToString();
     }
 }

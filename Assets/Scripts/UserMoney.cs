@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,7 @@ public class UserMoney : MonoBehaviour
     public void AddMoney(int amount)
     {
         _moneyAmount += amount;
+        _moneyText.transform.DOPunchScale(_moneyText.transform.localScale * 1.5f, 0.5f, 2);
         _moneyText.text = _moneyAmount.ToString();
     }
 
