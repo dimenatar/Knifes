@@ -1615,6 +1615,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798417473}
   m_CullTransparentMesh: 1
+--- !u!198 &862602898 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+    type: 3}
+  m_PrefabInstance: {fileID: 882885630668929555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2204,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 49.728333, y: -63.8586}
+  m_AnchoredPosition: {x: 84.3, y: -63.8586}
   m_SizeDelta: {x: 479.8918, y: 127.7174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1305910735
@@ -2455,7 +2461,8 @@ MonoBehaviour:
   - {fileID: 758870332}
   - {fileID: 1242186885}
   _userStatistics: {fileID: 2088347527}
-  _knifeSkinBundle: {fileID: 0}
+  _knifeSkinBundle: {fileID: 11400000, guid: 68cbf11186e7da744b2de077aa9da3f9, type: 2}
+  _woodParticles: {fileID: 862602898}
 --- !u!135 &1530285628
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2997,3 +3004,97 @@ MonoBehaviour:
   _stageController: {fileID: 2088347521}
   _wood: {fileID: 1530285627}
   _bossName: {fileID: 264905059}
+--- !u!1001 &882885630668929555
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813760, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: ColorModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813761, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 882885630415813763, guid: cd105984111b1614198e44208c576899,
+        type: 3}
+      propertyPath: m_Name
+      value: Parcticles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd105984111b1614198e44208c576899, type: 3}

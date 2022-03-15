@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3417550065942500605}
   - component: {fileID: 7162676094564328675}
   m_Layer: 5
-  m_Name: Image
+  m_Name: KnifeMenuSkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

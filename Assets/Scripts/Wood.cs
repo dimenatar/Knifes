@@ -11,6 +11,7 @@ public class Wood : MonoBehaviour
     [SerializeField] private List<Transform> _woodPartsPositions;
     [SerializeField] private UserStatistics _userStatistics;
     [SerializeField] private KnifeSkinBundle _knifeSkinBundle;
+    [SerializeField] private ParticleSystem _woodParticles;
 
     public event StageController.StageChanged OnStageCompleted;
 
@@ -135,8 +136,14 @@ public class Wood : MonoBehaviour
         _stageController.IncrementStage();
     }
 
+    private void PlayParcticles()
+    {
+        _woodParticles.Play();
+    }
+
     private void ReceiveKnife(GameObject knife)
     {
+        PlayParcticles();
         LightVibrate();
         Destroy(knife.GetComponent<KnifeMover>());
         Destroy(knife.GetComponent<Rigidbody>());
