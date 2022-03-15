@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class BossStage : UnityEngine.Object
+public class BossStage : object
 {
     [SerializeField] private string _bossName;
     [SerializeField] private int _knifeIndex;

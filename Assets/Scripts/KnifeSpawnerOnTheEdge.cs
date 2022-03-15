@@ -15,21 +15,15 @@ public class KnifeSpawnerOnTheEdge : MonoBehaviour
         _stageController.OnStageChanged += SpawnRandomAmountKnifes;
     }
 
-    private void Start()
-    {
-        //SpawnRandomAmountKnifes(1);
-    }
-
     public void SpawnRandomAmountKnifes(StageData stage)
     {
         Vector2 randomPointOnEdge;
-        int amountKnifes = Random.Range(_minPossibleAmountKnifes, _maxPossibleAmountKnifes);
+        int amountKnifes = Random.Range(_minPossibleAmountKnifes, _maxPossibleAmountKnifes+1);
         Debug.Log(amountKnifes);
         for (int i = 0; i < amountKnifes; i++)
         {
             randomPointOnEdge = Random.insideUnitCircle.normalized * (_circle.GetComponent<SphereCollider>().radius + 1);
             GameObject knife = Instantiate(_knifePrefab, new Vector2(randomPointOnEdge.x + _circle.transform.position.x, randomPointOnEdge.y + _circle.transform.position.y), Quaternion.identity);
-            Destroy(knife.GetComponent<Knife>());
             knife.name = "Knife";
             knife.transform.SetParent(_circle.transform);
             Vector3 lookDirection = (knife.transform.localPosition - _circle.transform.position).normalized;

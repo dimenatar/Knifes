@@ -12,6 +12,8 @@ public class Wood : MonoBehaviour
     [SerializeField] private UserStatistics _userStatistics;
     [SerializeField] private KnifeSkinBundle _knifeSkinBundle;
 
+    public event StageController.StageChanged OnStageCompleted;
+
     private List<Vector3> _woodPartsBasePositions = new List<Vector3>();
     private List<GameObject> _receivedKnifes = new List<GameObject>();
     private int _requiredKnifeAmount;
@@ -69,20 +71,7 @@ public class Wood : MonoBehaviour
         Vibration.VibratePop();
     }
 
-    private void ManageStage(StageData stageData)
-    {
-        if (stageData.BossStage != null)
-        {
-            SaveUserSkin(stageData.BossStage.KnifeIndex);
-        }
-    }
 
-    private void SaveUserSkin(int knifeIndex)
-    {
-        UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);
-        userData.UnlockSkin(_knifeSkinBundle.Skins.Where(skin => skin.SkinIndex == knifeIndex).FirstOrDefault());
-        UserSaveManager.SaveUserData(UserSaveManager.Path, userData);
-    }
 
     private void SetRequiredKnifes(StageData stage)
     {
@@ -141,7 +130,7 @@ public class Wood : MonoBehaviour
     private void CompleteStage()
     {
         LightVibrate();
-        ManageStage(_stageController.GetCurrentStage());
+        OnStageCompleted?.Invoke(_stageController.GetCurrentStage());
         DestroyWood();
         _stageController.IncrementStage();
     }

@@ -16,6 +16,11 @@ public class SkinLoader : MonoBehaviour
         LoadSkins();
     }
 
+    private void SetUsersKnifeSprite(string resourcePath)
+    {
+        _usersKnife.sprite = Resources.Load<Sprite>(resourcePath);
+    }
+
     private void LoadSkins()
     {
         UserData userData = UserSaveManager.LoadUserData(UserSaveManager.Path);
@@ -35,13 +40,20 @@ public class SkinLoader : MonoBehaviour
         {
             GameObject background = Instantiate(_backGroundPrefab, _scrollContent.transform);
             var skin = userData.UnlockedSkins.Where(skin => skin.SkinIndex == _skinBundle.Skins[i].SkinIndex).ToList();
+            background.AddComponent<KnifeMenuItem>();
             if (skin.Count == 0)
             {
                 //if (!userData.UnlockedSkins.Contains(_skinBundle.Skins[i]))
                 //{
-                    background.GetComponent<Image>().color = Color.gray;
+                background.GetComponent<Image>().color = Color.gray;
+                background.GetComponent<KnifeMenuItem>().SetSkinData(_skinBundle.Skins[i], false);
                 //}
             }
+            else
+            {
+                background.GetComponent<KnifeMenuItem>().SetSkinData(_skinBundle.Skins[i], true);
+            }
+            background.GetComponent<KnifeMenuItem>().OnSkinSet += SetUsersKnifeSprite;
             background.transform.Find("Image").GetComponent<Image>().sprite = Resources.Load<Sprite>(_skinBundle.Skins[i].SkinResourcesPath);
         }
     }

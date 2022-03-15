@@ -14,6 +14,7 @@ public class KnifeThrower : MonoBehaviour
     [SerializeField] private EndGamePanel _lose;
     [SerializeField] private Text _availableKnifesText;
     [SerializeField] private UserStatistics _userStatistics;
+    [SerializeField] private Text _wholeKnifeAmount;
 
     private Sprite _userSprite;
     private int _thrownKnifes;
@@ -64,6 +65,7 @@ public class KnifeThrower : MonoBehaviour
         {
             _availableKnifes = data.KnifeData.KnifeAmount;
             _availableKnifesText.text = (_availableKnifes).ToString();
+            _wholeKnifeAmount.text = _availableKnifesText.text;
             SpawnKnife();
         }
     }    

@@ -26,6 +26,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
     - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
     - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
   - _stageNumber: 2
     _knifeData:
       _knifeAmount: 5
@@ -39,6 +42,9 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
     - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
     - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
   - _stageNumber: 3
     _knifeData:
       _knifeAmount: 5
@@ -52,6 +58,25 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
     - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
     - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: 3156e5d097369ee449622eafe13a9c51, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: a6f4f97d42e691843887f7e2184a80a9, type: 3}
+    - {fileID: 21300000, guid: 94f544850b4f165469a2313fc1affccb, type: 3}
+    - {fileID: 21300000, guid: 27fdb6fd9bd0e3a43b629cf4f03a2bc6, type: 3}
+    _bossStage:
+      _bossName: blood
+      _knifeIndex: 4
   - _stageNumber: 4
     _knifeData:
       _knifeAmount: 5
@@ -65,3 +90,86 @@ MonoBehaviour:
     - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
     - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
     - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: 53c8573d646c55a4d899808ed0a1a6cf, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: 607a79c11aadac548a45fd753acaa405, type: 3}
+    - {fileID: 21300000, guid: 5cb86411286626948b95f870d78a7c98, type: 3}
+    - {fileID: 21300000, guid: 047295fffd0789b4aa1f3746ec828cd1, type: 3}
+    _bossStage:
+      _bossName: gold
+      _knifeIndex: 2
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
+  - _stageNumber: 4
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: e9dd6f4b37693fd4da3c0453cdfcec73, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: e9d5371a409df66419cf183beaa26d84, type: 3}
+    - {fileID: 21300000, guid: a24a145b7ff12a14cabafb84b9ced2fe, type: 3}
+    - {fileID: 21300000, guid: f6af75f4c9b954542a7e953a10fc8324, type: 3}
+    _bossStage:
+      _bossName: 
+      _knifeIndex: 0
+  - _stageNumber: 10
+    _knifeData:
+      _knifeAmount: 5
+    _rotateData:
+    - _spinUpTime: 2
+      _rotateSpeed: 1
+      _spinDownTime: 2
+      _spinTime: 2
+    _woodSprite: {fileID: 21300000, guid: 73283afb60305bc45a4c4472c78fc23e, type: 3}
+    _woodParts:
+    - {fileID: 21300000, guid: 673c787e506a7d44987eff327dc3227e, type: 3}
+    - {fileID: 21300000, guid: 6dfa2c3fa81a0d746b231e11fb0c756e, type: 3}
+    - {fileID: 21300000, guid: a348aa2a242f6eb458f692b9786c1c4f, type: 3}
+    _bossStage:
+      _bossName: emerand
+      _knifeIndex: 3

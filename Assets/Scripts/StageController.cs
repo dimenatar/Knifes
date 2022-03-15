@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageController : MonoBehaviour
 {
     [SerializeField] private StageBundle _stageBundle;
     [SerializeField] private EndGamePanel _endGamePanel;
+    [SerializeField] private Text _stageText;
+
     private int _currentStage = 1;
 
     public delegate void StageChanged(StageData stage);
@@ -16,6 +19,7 @@ public class StageController : MonoBehaviour
     private void Awake()
     {
         OnGameCompleted += _endGamePanel.ShowWinPanel;
+        OnStageChanged += SetStageText;
     }
 
     private void Start()
@@ -39,5 +43,10 @@ public class StageController : MonoBehaviour
         {
             OnGameCompleted?.Invoke();
         }
+    }
+
+    private void SetStageText(StageData stageData)
+    {
+        _stageText.text = stageData.StageNumber.ToString();
     }
 }
